@@ -11,8 +11,8 @@ WORKDIR /
 
 USER daemon
 
-ENTRYPOINT ["java", "-jar", "/opt/tictac.jar"]
+ENTRYPOINT ["java", "-jar", "/opt/tictac-assembly-1.0.jar"]
 
 EXPOSE 8080
 
-COPY target/scala-2.11/tictac.jar /opt/tictac.jar
+COPY target/scala-2.11/tictac-assembly-1.0.jar /opt/tictac-assembly-1.0.jar
