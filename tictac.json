@@ -8,7 +8,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "awsdevhmdal05:5000/tictac:{{DOCKER_IMAGE_TAG}}",
+      "image": "registry:5000/tictac:{{DOCKER_IMAGE_TAG}}",
       "network": "BRIDGE",
       "portMappings": [
         {
@@ -27,7 +27,7 @@
     {
       "protocol": "HTTP",
       "portIndex": 0,
-      "path": "/",
+      "path": "/start",
       "gracePeriod": 5,
       "intervalSeconds": 20,
       "maxConsecutiveFailures": 3
