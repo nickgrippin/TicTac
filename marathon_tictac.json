@@ -1,0 +1,36 @@
+{
+  "id": "tictac",
+  "mem": 128,
+  "cpus": 0.25,
+  "instances": 3,
+  "uris": [
+  ],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "awsdevhmdal05:5000/hmda-platform:{{DOCKER_IMAGE_TAG}}",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 0,
+          "servicePort": 10003,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "labels": {
+    "HAPROXY_GROUP": "internal"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriod": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
