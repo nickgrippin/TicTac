@@ -13,6 +13,6 @@ USER daemon
 
 ENTRYPOINT ["java", "-jar", "/opt/tictac-assembly-1.0.jar"]
 
-EXPOSE 8085
+EXPOSE 8089
 
 COPY target/scala-2.11/tictac-assembly-1.0.jar /opt/tictac-assembly-1.0.jar

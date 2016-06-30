@@ -1,6 +1,6 @@
 {
   "id": "tictac",
-  "mem": 512,
+  "mem": 128,
   "cpus": 0.1,
   "instances": 1,
   "uris": [
@@ -12,9 +12,9 @@
       "network": "BRIDGE",
       "portMappings": [
         {
-          "containerPort": 8085,
+          "containerPort": 8089,
           "hostPort": 0,
-          "servicePort": 10085,
+          "servicePort": 10089,
           "protocol": "tcp"
         }
       ]
