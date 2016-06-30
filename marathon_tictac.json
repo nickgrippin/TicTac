@@ -1,8 +1,8 @@
 {
   "id": "tictac",
-  "mem": 128,
-  "cpus": 0.25,
-  "instances": 3,
+  "mem": 512,
+  "cpus": 0.1,
+  "instances": 1,
   "uris": [
   ],
   "container": {
