@@ -1,7 +1,10 @@
 
-name := "tic-tac-service"
-organization := "nick"
+name := "tictac"
+
+organization := "hmda"
+
 version := "1.0"
+
 scalaVersion := "2.11.7"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
