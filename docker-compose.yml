@@ -1,0 +1,8 @@
+# Docker compose configuration file for the TicTac Project
+# Version: 1.0.0
+
+TicTac:
+  build: .
+  ports:
+    - 8080:8080
+    - 2551:2551
