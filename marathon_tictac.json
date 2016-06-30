@@ -8,7 +8,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "awsdevhmdal05:5000/hmda-platform:{{DOCKER_IMAGE_TAG}}",
+      "image": "awsdevhmdal05:5000/tictac:{{DOCKER_IMAGE_TAG}}",
       "network": "BRIDGE",
       "portMappings": [
         {
