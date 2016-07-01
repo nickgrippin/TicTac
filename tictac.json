@@ -1,6 +1,6 @@
 {
   "id": "tictac",
-  "mem": 128,
+  "mem": 512,
   "cpus": 0.1,
   "instances": 1,
   "uris": [
@@ -27,7 +27,7 @@
     {
       "protocol": "HTTP",
       "portIndex": 0,
-      "path": "/start",
+      "path": "",
       "gracePeriod": 5,
       "intervalSeconds": 20,
       "maxConsecutiveFailures": 3

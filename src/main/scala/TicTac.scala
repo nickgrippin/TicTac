@@ -1,6 +1,6 @@
-package main.scala
+package src.main.scala
 
-import akka.actor.{ ActorRef, ActorSystem }
+import akka.actor.{ActorRef, ActorSystem}
 import akka.event.Logging
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives._
@@ -10,7 +10,7 @@ import akka.stream.ActorMaterializer
 /**
   * Created by grippinn on 6/30/16.
   */
-object TicTac extends App {
+object TicTac extends App with Skynet {
   implicit val system = ActorSystem("TicTac")
   implicit val materializer = ActorMaterializer()
   implicit val ec = system.dispatcher
@@ -21,17 +21,40 @@ object TicTac extends App {
   val host = "0.0.0.0"
   val port = 8080
 
-  val route =
+  var board = Array(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+
+  val routes =
     path("start") {
       get {
         complete {
-          "Ready to begin"
+          "Ready to begin\n" + printBoard(board)
+        }
+      }
+    } ~
+    path("") {
+      get {
+        complete {
+          "healthy"
+        }
+      }
+    } ~
+    path("move") {
+      post {
+        entity(as[String]) {
+          string => complete {
+            board = string.split("")
+            if(checkWin(board)) {
+              "You win!"
+            } else {
+              "I need to make a move\n" + printBoard(board)
+            }
+          }
         }
       }
     }
 
   val http = Http().bindAndHandle(
-    route,
+    routes,
     host,
     port
   )
