@@ -19,7 +19,7 @@ object TicTac extends App with Skynet {
   //val config = ConfigFactory.load()
 
   val host = "0.0.0.0"
-  val port = 8080
+  val port = 8089
 
   var board = Array(" ", " ", " ", " ", " ", " ", " ", " ", " ")
 
